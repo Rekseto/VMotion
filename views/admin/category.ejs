@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../templates/head.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100" rel="stylesheet">
+</head>
+
+<body>
+<% include ../templates/navigation.ejs %>
+<main>
+    <% include ../templates/panel.ejs %>
+</main>
+<section>
+    <form method="post" enctype="multipart/form-data">
+        <label for="title">title:</label>
+        <input type="text" name="title" required>
+        <input type="file" name="picture" required>
+        <input type="submit" value="Create a Category">
+    </form>
+
+</section>
+<% include ../templates/footer.ejs %>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include templates/head.ejs %>
+</head>
+<body>
+<% include templates/navigation.ejs %>
+<ul>
+    <% for(var i = 0; i < category.length; i++) { %>
+    <li>
+        <h3><%= category[i].title %></h3>
+    </li>
+    <% } %>
+</ul>
+<% include templates/footer.ejs %>
+</body>
+</html>

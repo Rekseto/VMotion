@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../templates/head.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100" rel="stylesheet">
+    <script src="javascripts/tagify.min.js"></script>
+    <script src="javascripts/scripts.js"></script>
+</head>
+
+<body>
+<% include ../templates/navigation.ejs %>
+<main>
+    <% include ../templates/panel.ejs %>
+</main>
+<section>
+    <form method="post" enctype="multipart/form-data">
+        <label for="title">title:</label>
+        <input type="text" name="title" required>
+        <input type="text" name="author" required>
+        <input type="file" name="picture" required>
+        <textarea name="content" id="area" cols="30" rows="10" required></textarea>
+        <textarea name='tags' placeholder='Enter a tag here...'></textarea>
+        <input type="submit" value="Create a Article">
+    </form>
+
+</section>
+<% include ../templates/footer.ejs %>
+</body>
+</html>
