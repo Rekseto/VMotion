@@ -8,8 +8,9 @@ var session = require('express-session');
 var app = express();
 var mongoose = require('mongoose');
 
+var articles = require('./routes/visitor/articles');
 var index = require('./routes/visitor/index');
-var index = require('./routes/visitor/articleSite');
+var article = require('./routes/visitor/articleSite');
 var loginAdmin = require('./routes/admin/login');
 var logoutAdmin = require('./routes/admin/logout');
 var articleAdmin = require('./routes/admin/article');
@@ -33,6 +34,8 @@ global.config = require('./configs/config');
 /* routing */
 mongoose.connect(config.db_connect);
 app.use(index);
+app.use(article);
+app.use(articles);
 app.use(loginAdmin);
 app.use(logoutAdmin);
 app.use(articleAdmin);

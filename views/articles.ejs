@@ -5,9 +5,14 @@
 </head>
 <body>
 <% include templates/navigation.ejs %>
-<p>
-    <%= articleContent %>
-</p>
+<main>
+    <% for(var i = 0; i < articles.length; i++) { %>
+    <article>
+        <h2><%= articles[i].title %></h2>
+
+    </article>
+    <% } %>
+</main>
 
 <% include templates/footer.ejs %>
 </body>

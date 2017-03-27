@@ -1,4 +1,3 @@
-var User = require('../models/Tag');
 var Article = require('../models/Article');
 var ArticleController = {
 
@@ -14,8 +13,7 @@ var ArticleController = {
         articleData.save();
     },
     findArticleById: function (id) {
-        var query = Article.find({_id: id});
-        return queryPromise = query.exec();
+        return queryPromise = Article.find({_id: id}).exec();
     },
     findAllArticlesByTag: function (tag) {
 
