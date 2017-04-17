@@ -1,6 +1,6 @@
 {
-  "name": "vmotion",
-  "version": "0.0.1",
+  "name": "VMotion",
+  "version": "0.1.2",
   "private": false,
   "scripts": {
     "start": "node ./bin/www"
@@ -16,6 +16,7 @@
     "serve-favicon": "~2.3.0",
     "formidable": "latest",
     "mongoose": "latest",
+    "html-escape": "latest",
     "mkdirp": "latest",
     "express-session": "latest"
   },

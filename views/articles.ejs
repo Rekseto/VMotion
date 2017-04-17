@@ -5,15 +5,39 @@
 </head>
 <body>
 <% include templates/navigation.ejs %>
-<main>
-    <% for(var i = 0; i < articles.length; i++) { %>
-    <article>
-        <h2><%= articles[i].title %></h2>
-
+<nav class="main-container">
+    <main class="main">
+        <section class="section section--articles">
+            <h2 class="section-heading">Moje prace</h2>
+            <div class="articles-container">
+                <% for(var i = 0; i < articles.length; i++) { %>
+                <article class="articles-item">
+                    <div class="article-up">
+                        <img src="../uploads/<%= articles[i]._id %>/<%= articles[i].images[0] %>" alt=""
+                             class="article-img">
+                    </div>
+                    <div class="article-down">
+                        <a href="/article/<%= articles[i]._id %>" class="article-more">Wiecej</a>
+                    </div>
     </article>
     <% } %>
+            </div>
+            <nav class="pages">
+                <ul>
+                    <% for(var i = 1; i < pages + 1; i++) { %>
+                    <% if(i == active) { %>
+                    <li><a href="../articles/<%= i %>" aria-label="Page <%= i %>"
+                           class="pages-link pages-link-isActive"><%= i %></a></li>
+                    <% } else { %>
+                    <li><a href="../articles/<%= i %>" aria-label="Page <%= i %>" class="pages-link"><%= i %></a></li>
+                    <% } %>
+                    <% } %>
+                </ul>
+            </nav>
+        </section>
 </main>
-
-<% include templates/footer.ejs %>
+    <% include templates/footer.ejs %>
+    </div>
+    <% include templates/scripts.ejs %>
 </body>
 </html>

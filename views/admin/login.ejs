@@ -5,21 +5,24 @@
 </head>
 <body>
 <% include ../templates/navigation.ejs %>
-<main>
-    <div class="login-form">
-        <form method="post">
-            <label for="username">Login:</label>
-            <br/>
-            <input type="text" name="username" required>
-            <br/>
-            <label for="password">Password:</label>
-            <br/>
-            <input type="password" name="password" required>
-            <br/>
-            <input class="submit-button" type="submit" value="Log in">
-        </form>
-    </div>
-</main>
-<% include ../templates/footer.ejs %>
+<div class="main-container">
+    <main class="main">
+        <section class="section section--login">
+            <form method="post" class="login-form">
+                <label for="username">Login:</label>
+                <br/>
+                <input type="text" name="username" class="login-input" required>
+                <br/>
+                <label for="password">Password:</label>
+                <br/>
+                <input type="password" name="password" class="login-input" required>
+                <br/>
+                <input class="submit-button" type="submit" value="Log in">
+            </form>
+        </section>
+    </main>
+    <% include ../templates/footer.ejs %>
+</div>
+<% include ../templates/scripts.ejs %>
 </body>
 </html>

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 var loginController = require('../../controllers/adminController');
-
+var config = require('../../configs/config');
 router.get('/login', function (req, res, next) {
     res.render('admin/login', {
         title: config.title

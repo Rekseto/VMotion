@@ -5,10 +5,17 @@
 </head>
 <body>
 <% include templates/navigation.ejs %>
-<p>
-    <%- articleContent %>
-</p>
-
-<% include templates/footer.ejs %>
+<div class="main-container">
+    <main class="main">
+        <section class="section section--article">
+            <div class="section-container">
+                <h2 class="section-heading"><%- articleTitle %></h2>
+                <p> <%- articleContent %> </p>
+            </div>
+        </section>
+    </main>
+    <% include templates/footer.ejs %>
+</div>
+<% include templates/scripts.ejs %>
 </body>
 </html>

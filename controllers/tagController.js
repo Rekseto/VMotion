@@ -1,5 +1,6 @@
+var User = require('../models/Tag');
 var Tag = require('../models/Tag');
-var tagController = {
+var ArticleController = {
 
     addTag: function (title) {
         var tagData = new Tag({
@@ -8,5 +9,5 @@ var tagController = {
         tagData.save();
     }
 }
-//exoprts
+//exorts
 module.exports = tagController;

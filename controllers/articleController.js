@@ -1,3 +1,4 @@
+var User = require('../models/Tag');
 var Article = require('../models/Article');
 var ArticleController = {
 

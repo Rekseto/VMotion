@@ -1,7 +1,8 @@
 module.exports = {
-    title: 'Ryan Lee',
+    title: 'Title ',
     version: '0.1',
     password: 'password',
     user: 'admin',
-    db_connect: 'db connect url here'
+    db_connect: 'db_connect_url',
+    perPage: '5'
 };

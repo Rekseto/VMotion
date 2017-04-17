@@ -3,10 +3,13 @@ var router = express.Router();
 var session = require('express-session');
 var loginController = require('../../controllers/adminController');
 var articleController = require('../../controllers/articleController');
+var escape = require('html-escape');
+var Article = require('../../models/Article');
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
+var config = require('../../configs/config');
 var sess;
 var mongoose = require('mongoose');
 router.get('/admin/article', function (req, res, next) {
@@ -33,10 +36,20 @@ router.post('/admin/article', function (req, res, next) {
         form.keepExtensions = true;
         form.parse(req, function (err, fields, files) {
             if (fields.title.length < 120 || fields.content.length < 1000000) {
-                mkdirp(form.uploadDir + '/' + fields.title);
-                articleController.addArticle(fields.title, fields.author, fields.tags, fields.content, files.picture.name)
-                fs.rename(files.picture.path, "./public/uploads" + '/' + fields.title + '/' + files.picture.name);
-                res.redirect('/admin');
+                Article.nextCount(function (err, count) {
+                    if (err) {
+                        mkdirp(form.uploadDir + '/' + count);
+                        fs.rename(files.picture.path, "./public/uploads" + '/' + '0' + '/' + files.picture.name);
+                        articleController.addArticle(fields.title, fields.author, fields.tags, escape(fields.content), files.picture.name);
+                        res.redirect('/admin');
+                    }
+                    else {
+                        mkdirp(form.uploadDir + '/' + count);
+                        fs.rename(files.picture.path, "./public/uploads" + '/' + count + '/' + files.picture.name);
+                        articleController.addArticle(fields.title, fields.author, fields.tags, escape(fields.content), files.picture.name);
+                        res.redirect('/admin');
+                    }
+                });
             }
         });
     }
