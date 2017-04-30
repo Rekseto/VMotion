@@ -18,7 +18,9 @@
     "mongoose": "latest",
     "html-escape": "latest",
     "mkdirp": "latest",
-    "express-session": "latest"
+    "express-session": "latest",
+    "showdown": "latest"
+
   },
   "author": "rkst",
   "homepage": "https://github.com/Rekseto/VMotion"

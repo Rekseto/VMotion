@@ -1,8 +1,8 @@
 module.exports = {
-    title: 'Title ',
-    version: '0.1',
+    title: 'JSGuardian',
+    version: '0.2',
     password: 'password',
     user: 'admin',
-    db_connect: 'db_connect_url',
+    db_connect: '',
     perPage: '5'
 };

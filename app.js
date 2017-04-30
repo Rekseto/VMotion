@@ -3,8 +3,17 @@
 /**
  * Module dependencies.
  */
+var express = require('express')
+var session = require('express-session');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var config = require('./configs/config');
+var mongoose = require('mongoose');
 
-var app = require('./www.js');
+var app = require('./index.js');
 var debug = require('debug')('portfolio:server');
 var http = require('http');
 
@@ -13,7 +22,10 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+
 app.set('port', port);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Create HTTP server.

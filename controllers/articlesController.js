@@ -1,3 +1,5 @@
+var articleController = require('./articleController');
+
 var ArticlesController = {
 
     getPages: function (articles, perPage) {
@@ -7,9 +9,11 @@ var ArticlesController = {
         return Math.ceil(paginated);
     },
     getPaginatedSite: function (page, perPage, articles) {
+
         var pagePagination = perPage;
         var firstIndexOnPage = page * pagePagination - 5;
         var lastIndexOnPage = page * pagePagination;
+        console.log(articles.slice(firstIndexOnPage, lastIndexOnPage));
         return articles.slice(firstIndexOnPage, lastIndexOnPage);
     }
 

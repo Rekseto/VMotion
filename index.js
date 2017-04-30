@@ -11,10 +11,10 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // routers import
 var index = require(path.join(__dirname, 'routes/visitor/index'));
-var test = require(path.join(__dirname, 'routes/visitor/test'));
-var contact = require(path.join(__dirname, 'routes/visitor/contact'));
+var about = require(path.join(__dirname, 'routes/visitor/about'));
 var article = require(path.join(__dirname, 'routes/visitor/articleSite'));
 var articles = require(path.join(__dirname, 'routes/visitor/articles'));
+var articlesTag = require(path.join(__dirname, 'routes/visitor/articlesTag'));
 
 var login = require(path.join(__dirname, 'routes/admin/login'));
 var logout = require(path.join(__dirname, 'routes/admin/logout'));
@@ -38,11 +38,11 @@ app.use(session({secret: 'MySecret'}));
 app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect(config.db_connect);
 // routing
-app.use(test);
 app.use(index);
-app.use(contact);
+app.use(about);
 app.use(article);
 app.use(articles);
+app.use(articlesTag);
 app.use(login);
 app.use(logout);
 app.use(articleAdmin);

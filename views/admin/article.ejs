@@ -2,28 +2,30 @@
 <html>
 <head>
     <% include ../templates/head.ejs %>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100" rel="stylesheet">
-    <script src="javascripts/tagify.min.js"></script>
-    <script src="javascripts/scripts.js"></script>
 </head>
 
 <body>
-<% include ../templates/navigation.ejs %>
-<main>
-    <% include ../templates/panel.ejs %>
-</main>
 <section>
-    <form method="post" enctype="multipart/form-data">
-        <label for="title">title:</label>
-        <input type="text" name="title" required>
-        <input type="text" name="author" required>
-        <input type="file" name="picture" required>
-        <textarea name="content" id="area" cols="30" rows="10" required></textarea>
-        <textarea name='tags' placeholder='Enter a tag here...'></textarea>
+    <form action="/admin/article" method="post" enctype="multipart/form-data">
+        <label for="title">Tytuł</label>
+        <input type="text" name="title" id="title" required>
+
+        <label for="author">Autor</label>
+        <input type="text" name="author" id="author" required>
+
+        <label for="picture">Obraz artykułu</label>
+        <input type="file" name="picture" id="picture" required>
+
+        <label for="content">Treść</label>
+        <textarea name="content" id="area" cols="30" rows="10" id="content" required></textarea>
+
+        <label for="tags">Tagi</label>
+        <input type="text" id="tags" name="tags">
+
         <input type="submit" value="Create a Article">
     </form>
 
 </section>
-<% include ../templates/footer.ejs %>
+<% include ../templates/scripts.ejs %>
 </body>
 </html>

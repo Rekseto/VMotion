@@ -46,7 +46,7 @@ router.post('/admin/article', function (req, res, next) {
                     else {
                         mkdirp(form.uploadDir + '/' + count);
                         fs.rename(files.picture.path, "./public/uploads" + '/' + count + '/' + files.picture.name);
-                        articleController.addArticle(fields.title, fields.author, fields.tags, escape(fields.content), files.picture.name);
+                        articleController.addArticle(fields.title, fields.author, fields.tags.split(','), escape(fields.content), files.picture.name);
                         res.redirect('/admin');
                     }
                 });

@@ -1,4 +1,3 @@
-var session = require('express-session');
 var config = require('../configs/config');
 var adminController = {
     authorize: function (req, next) {

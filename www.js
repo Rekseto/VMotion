@@ -29,6 +29,8 @@ app.use(session({secret: 'MySecret'}));
 app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect(config.db_connect);
 // routing
+
+
 app.use(index);
 app.use(contact);
 app.use(article);
