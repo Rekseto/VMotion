@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <% include ./templates/head.ejs %>
+</head>
+<body>
+<% include ./templates/navigation.ejs%>
+<section>
+    <header><h2>Artykuły</h2></header>
+    <% for(var i=0; i<articles.length; i++) { %>
+    <article>
+            <p> &bull; <%= articles[i].author %>  <%for(var d=0; d<articles[i].tagList.length; d++) {%> &bull; <%= articles[i].tagList[d] %> <%}%></p>
+            <img width="150" height="150" src="../uploads/<%= articles[i]._id%>/<%= articles[i].images[0]%>" alt="<%=articles[i].title%>" class="article-img">
+            <a href="/article/<%=articles[i]._id%>">Wiecej</a>
+    </article>
+    <% } %>
+
+    <nav class="pages">
+        <ul>
+            <% for(var i= 1; i< pages +1; i++) {%>
+            <% if(i == active) {%>
+            <li><a href="../articles/<%=i %>" aria-label="Page <%=i%>" class="pages-link pages-link-isActive"><%=i%></a></li>
+            <% } else {%>
+            <li><a href="../articles/<%=i %>" aria-label="Page <%=i%>" class="pages-link"><%=i%></a></li>
+            <%}%>
+            <% }%>
+        </ul></nav>
+</section>
+<% include ./templates/scripts.ejs %>
+</body>
+</html>
