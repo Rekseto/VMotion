@@ -9,6 +9,7 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var cookieController = require(path.join(__dirname, 'controllers/cookieController'));
 // routers import
 var index = require(path.join(__dirname, 'routes/visitor/index'));
 var about = require(path.join(__dirname, 'routes/visitor/about'));
@@ -34,8 +35,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(session({secret: 'MySecret'}));
-app.use(express.static(path.join(__dirname, 'public')));
+
 mongoose.connect(config.db_connect);
 // routing
 app.use(index);
@@ -49,6 +49,7 @@ app.use(articleAdmin);
 
 app.use(whatsNew);
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 module.exports = app;

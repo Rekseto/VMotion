@@ -23,6 +23,15 @@ var ArticleController = {
     },
     findAllArticles: function () {
         return Article.find().sort({'_id': 1}).exec();
+    },
+    removeArticle : function (id,res) {
+        "use strict";
+        Article.findByIdAndRemove(id,function (err) {
+            if(err) console.log('cos');
+            else {
+                res.redirect('/admin');
+            }
+        });
     }
 
 

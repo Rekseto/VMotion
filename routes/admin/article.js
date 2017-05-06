@@ -12,8 +12,8 @@ var mkdirp = require('mkdirp');
 var config = require('../../configs/config');
 var sess;
 var mongoose = require('mongoose');
+
 router.get('/admin/article', function (req, res, next) {
-    sess = req.session;
     if (loginController.checkSession(req)) {
         res.render('admin/article', {
             title: config.title
@@ -61,4 +61,28 @@ router.post('/admin/article', function (req, res, next) {
 
 });
 
+router.get('/admin/removeArticle', function (req, res) {
+    if (loginController.checkSession(req)) {
+        res.render('admin/removeArticle', {
+            title: config.title
+        });
+    }
+    else {
+        res.render('failed', {
+            message: 'U must be logged!'
+        });
+    }
+});
+
+router.post('/admin/removeArticle',function  (req, res) {
+    if (loginController.checkSession(req)) {
+         articleController.removeArticle(parseInt(req.body.articleId),res);
+    }
+    else {
+        res.render('failed', {
+            message: 'U must be logged!'
+        });
+    }
+
+});
 module.exports = router;

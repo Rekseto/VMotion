@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var session = require('express-session');
+var Cookie = require('../../models/Cookie');
+var cookieController = require('../../controllers/cookieController');
+
 
 router.get('/admin/logout', function (req, res, next) {
-    req.session.destroy();
-    res.redirect("/login")
+    cookieController.removeCookies();
+    res.clearCookie('session');
+    res.redirect("/login");
+
 });
 
 module.exports = router;

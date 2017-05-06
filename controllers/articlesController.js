@@ -13,7 +13,6 @@ var ArticlesController = {
         var pagePagination = perPage;
         var firstIndexOnPage = page * pagePagination - 5;
         var lastIndexOnPage = page * pagePagination;
-        console.log(articles.slice(firstIndexOnPage, lastIndexOnPage));
         return articles.slice(firstIndexOnPage, lastIndexOnPage);
     }
 

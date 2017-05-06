@@ -1,24 +1,26 @@
 var config = require('../configs/config');
+var cookieController = require('./cookieController');
+var Cookie = require('../models/Cookie');
 var adminController = {
-    authorize: function (req, next) {
+    authorize: function (req, next,res) {
         if (req.body.username === config.user & req.body.password === config.password) {
-            sess = req.session;
-            sess.username = req.body.username;
-            sess.password = req.body.password;
             return true;
         }
         else {
-            return false;
+            return  false;
         }
     },
     checkSession: function (req) {
-        sess = req.session;
-        if (sess.username) {
-            return true;
-        }
-        else {
+        var session = req.cookies.session
+        if (session === undefined) {
             return false;
         }
+        else {
+            return true;
+        }
+    },
+    destroySession : function () {
+        
     }
 }
 
