@@ -1,16 +1,21 @@
-var User = require('../models/Tag');
-var Article = require('../models/Article');
-var ArticleController = {
+const Article = require('../models/Article');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const Entities = require('html-entities').XmlEntities;
+
+let ArticleController = {
 
     addArticle: function (title, author, tags, content, picture) {
-
-        var articleData = new Article({
+        entities = new Entities();
+        const dom = new JSDOM(entities.decode(content));
+        let articleData = new Article({
             author: author,
             title: title,
             content: content,
             images: picture,
             tagList: tags,
-            created_at: new Date()
+            created_at: new Date(),
+            shavedContent:dom.window.document.querySelector("p").textContent
         });
 
         articleData.save();

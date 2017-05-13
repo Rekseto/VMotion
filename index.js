@@ -1,31 +1,29 @@
 // imports
-var path = require('path');
-var express = require('express');
-var config = require('./configs/config');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var cookieController = require(path.join(__dirname, 'controllers/cookieController'));
+const path = require('path');
+const express = require('express');
+const config = require('./configs/config');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const cookieController = require(path.join(__dirname, 'controllers/cookieController'));
 // routers import
-var index = require(path.join(__dirname, 'routes/visitor/index'));
-var about = require(path.join(__dirname, 'routes/visitor/about'));
-var article = require(path.join(__dirname, 'routes/visitor/articleSite'));
-var articles = require(path.join(__dirname, 'routes/visitor/articles'));
-var articlesTag = require(path.join(__dirname, 'routes/visitor/articlesTag'));
+const index = require(path.join(__dirname, 'routes/visitor/index'));
+const about = require(path.join(__dirname, 'routes/visitor/about'));
+const article = require(path.join(__dirname, 'routes/visitor/articleSite'));
+const articles = require(path.join(__dirname, 'routes/visitor/articles'));
+const articlesTag = require(path.join(__dirname, 'routes/visitor/articlesTag'));
 
-var login = require(path.join(__dirname, 'routes/admin/login'));
-var logout = require(path.join(__dirname, 'routes/admin/logout'));
-var articleAdmin = require(path.join(__dirname, 'routes/admin/article'));
+const login = require(path.join(__dirname, 'routes/admin/login'));
+const logout = require(path.join(__dirname, 'routes/admin/logout'));
+const articleAdmin = require(path.join(__dirname, 'routes/admin/article'));
 
-var whatsNew = require(path.join(__dirname,'routes/api/whatsNew'));
+const whatsNew = require(path.join(__dirname,'routes/api/whatsNew'));
 
 
 
-var app = express();
+const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -4,13 +4,15 @@
     <% include ./templates/head.ejs %>
 </head>
 <body>
-<% include ./templates/navigation.ejs%>
-<section>
-    <div>
-        <h2 class="section-heading"><%- articleTitle %></h2>
-        <p> <%- articleContent %> </p>
-    </div>
-</section>
+<div class="container">
+    <% include ./templates/navigation.ejs %>
+    <section>
+        <div>
+            <h2 class="section-heading"><%- articleTitle %></h2>
+            <div> <%- articleContent %></div>
+        </div>
+    </section>
+</div>
 <% include ./templates/scripts.ejs %>
 </body>
 </html>

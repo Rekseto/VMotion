@@ -1,13 +1,13 @@
-var Cookie = require('../models/Cookie');
+const Cookie = require('../models/Cookie');
 
-var cookieController =  {
+let cookieController =  {
     generateSession : function () {
-        var sessionId = Math.floor(Math.random() * 9000) + 1000;
+        let sessionId = Math.floor(Math.random() * 9000) + 1000;
         return sessionId;
     },
     createSession : function (sess,res,req) {
-        var cookie = req.cookies.session;
-        var cookieData = new Cookie({
+        let cookie = req.cookies.session;
+        let cookieData = new Cookie({
             sessionId: sess
         });
 

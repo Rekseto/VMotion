@@ -1,7 +1,8 @@
-var config = require('../configs/config');
-var cookieController = require('./cookieController');
-var Cookie = require('../models/Cookie');
-var adminController = {
+const config = require('../configs/config');
+const cookieController = require('./cookieController');
+const Cookie = require('../models/Cookie');
+
+let adminController = {
     authorize: function (req, next,res) {
         if (req.body.username === config.user & req.body.password === config.password) {
             return true;

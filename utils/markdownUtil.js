@@ -1,8 +1,7 @@
-var showdown = require('showdown');
+var markdown = require( "markdown" ).markdown;
 var markdownUtil = {
     renderMarkdown: function (marked) {
-        var converter = new showdown.Converter();
-        return converter.makeHtml(marked);
+        return markdown.toHTML(marked);
     }
 
 

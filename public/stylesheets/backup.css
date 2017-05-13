@@ -1,0 +1,265 @@
+body {
+    background-color: #FFFFFF;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Libre Franklin', sans-serif;
+    }
+
+
+header {  }
+
+
+h1, h2, h3, h4, h5, h6 { font-family: serif; font-weight: bold; }
+
+
+p { font-family: serif; font-size: 1em; }
+
+
+h1 { font-size: 2em;}
+
+
+h2 { font-size: 1.8em;}
+
+
+h3 { font-size: 1.6em; }
+
+
+h4 { font-size: 1.4em; }
+
+
+h5 { font-size: 1.2em; }
+
+
+.main {
+    flex: 1;
+    order: 1;
+    width: 80%;
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    min-height: 90%;
+    }
+
+
+.header {
+    width: 100%;
+    text-align: center;
+    color: rgba(89, 89, 89, 0.4);
+    font-family: 'Open Sans', sans-serif;
+    }
+
+
+.navigation {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(89, 89, 89, 0.8);
+    background-color: #2C3E50;
+    width: 20%;
+    box-shadow: -1px 2px 19px -2px rgba(0, 0, 0, 0.75);
+    }
+
+
+.navigation-list {
+    margin-top: 40px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+.navigation-list-element {
+    padding: 15px 5px 5px 5px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    }
+
+
+.navigation-list-element a {
+    color: #ECF0F1;
+    }
+
+
+.login-form {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 10em;
+    }
+
+
+.login-form form {
+    flex-direction: row;
+    padding: 2em;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+
+.section_articles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    }
+
+
+.section_article {
+    margin: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    background-color: white;
+    box-shadow: -2px 4px 75px -16px rgba(0, 0, 0, 0.75);
+    }
+
+
+.article_left {
+    width: 50%;
+    display: flex;
+    }
+
+
+.article_right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    }
+
+
+.article_img {
+    align-self: center;
+    flex-shrink: 4;
+    box-shadow: -2px 4px 75px -16px rgba(0, 0, 0, 0.75);
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-left: 50px;
+    }
+
+
+.section_article h2 {
+    align-self: baseline;
+    margin-top: 40px;
+    }
+
+
+.article_heading_link {
+    margin-left: 50px;
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    text-decoration: underline;
+    color: black;
+    }
+
+
+.article_more {
+    align-self: flex-end;
+    font-size: 1.5em;
+    padding: 40px;
+    color: black;
+    }
+
+
+.article_more:visited {
+    color: black;
+    }
+
+
+.article_heading_link:visited {
+    color: black;
+    }
+
+
+.footer {
+    min-height: 10vh;
+    }
+
+
+.submit-button {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    }
+
+
+.panel {
+    margin-top: 10px;
+    width: 100%;
+    }
+
+
+.panel-list {
+    list-style-type: none;
+    text-align: center;
+    }
+
+
+.panel-list li {
+    display: inline-block;
+    margin-left: 15px;
+    background-color: #2196F3;
+    color: #FFFFFF;
+    padding: 5px 5px 5px 5px;
+    margin-right: 15px;
+    border: none;
+    min-width: 88px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-clip: padding-box;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    }
+
+
+.panel-list li a {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    }
+
+
+.panel-list li a i {
+    margin-left: 5px;
+    }
+
+
+.panel:after {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    display: block;
+    width: 55%;
+    height: 1px;
+    border-bottom: 1px solid rgba(89, 89, 89, 0.2);
+    border-radius: 1px;
+    }
+
+
+@media (max-width: 600px) {
+    .panel-list li {
+        display: block;
+        margin-left: 15px;
+        padding: 3px 3px 3px 3px;
+        border-radius: 2px;
+        margin-right: 15px;
+        }
+
+
+    .navigation-list-element {
+        padding: 15px 15px 15px 15px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 2em;
+        display: block;
+        }
+
+    }

@@ -1,8 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var session = require('express-session');
-var config = require('../../configs/config');
-var articleController = require('../../controllers/articleController');
+const express = require('express');
+const router = express.Router();
+const config = require('../../configs/config');
+const articleController = require('../../controllers/articleController');
 
 router.get('/api/whatsnew', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

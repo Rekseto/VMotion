@@ -4,6 +4,7 @@
     <% include ./templates/head.ejs %>
 </head>
 <body>
+<div class="container">
 <% include ./templates/navigation.ejs%>
 <section>
     <header><h2>Artykuły</h2></header>
@@ -14,6 +15,8 @@
             &bull; <a href="/tag/<%= articles[i].tagList[d] %>/1"><%= articles[i].tagList[d] %></a>
             <% } %>
         </p>
+        <%-articles[i].shavedContent %>
+
         <img width="150" height="150" src="../uploads/<%= articles[i]._id %>/<%= articles[i].images[0] %>"
              alt="<%= articles[i].title %>" class="article-img">
         <a href="/article/<%= articles[i]._id %>">Wiecej</a>
@@ -33,6 +36,7 @@
         </ul>
     </nav>
 </section>
+</div>
 <% include ./templates/scripts.ejs %>
 </body>
 </html>

@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var articleController = require('../../controllers/articleController');
-var articlesController = require('../../controllers/articlesController');
-var config = require('../../configs/config');
+const express = require('express');
+const router = express.Router();
+
+const articleController = require('../../controllers/articleController');
+const articlesController = require('../../controllers/articlesController');
+const config = require('../../configs/config');
 
 router.get('/tag/:tag/:page', function (req, res, next) {
     articleController.findAllArticlesByTag(req.params.tag).then(function (result) {

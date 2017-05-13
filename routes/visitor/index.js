@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var session = require('express-session');
-var config = require('../../configs/config');
-var articleController = require('../../controllers/articleController');
-var articlesController = require('../../controllers/articlesController');
-var sess;
+const express = require('express');
+const router = express.Router();
+
+const config = require('../../configs/config');
+const articleController = require('../../controllers/articleController');
+const articlesController = require('../../controllers/articlesController');
 
 router.get('/', function (req, res, next) {
     articleController.findAllArticles().then(function (result) {

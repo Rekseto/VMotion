@@ -78,13 +78,13 @@ video {
 }
 
 a {
-    color: black;
-    text-decoration: underline;
+    color: white;
+    text-decoration: none;
 }
 
 a:visited {
-    color: black;
-    text-decoration: underline;
+    color: white;
+    text-decoration: none;
 }
 
 *, *::after, *::before {

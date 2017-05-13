@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var session = require('express-session');
-var loginController = require('../../controllers/adminController');
-var cookieController = require('../../controllers/cookieController');
-var config = require('../../configs/config');
-var Cookie = require('../../models/Cookie');
+const express = require('express');
+const router = express.Router();
+
+const loginController = require('../../controllers/adminController');
+const cookieController = require('../../controllers/cookieController');
+const config = require('../../configs/config');
+const Cookie = require('../../models/Cookie');
 
 router.get('/login', function (req, res, next) {
     res.render('admin/login', {
@@ -25,9 +25,8 @@ router.post('/login', function (req, res, next) {
 
 router.get('/admin', function (req, res, next) {
 
-    console.log(req.cookies.session);
     if (loginController.checkSession(req)) {
-        Cookie.find({'sessionId': session.toString()}, function (err, result) {
+        Cookie.find({'sessionId': req.cookies.session.toString()}, function (err, result) {
             {
                 if (result) {
                     res.render('admin/admin', {
@@ -46,4 +45,4 @@ router.get('/admin', function (req, res, next) {
         });
     }
 });
-    module.exports = router;
+module.exports = router;

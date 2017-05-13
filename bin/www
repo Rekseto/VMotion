@@ -3,25 +3,17 @@
 /**
  * Module dependencies.
  */
-const express = require('express')
-const path = require('path');
-const favicon = require('serve-favicon');
-const config = require('./configs/config');
-const mongoose = require('mongoose');
 
-const app = require('./index.js');
-const debug = require('debug')('portfolio:server');
-const http = require('http');
+var app = require('../appe');
+var debug = require('debug')('untitled1:server');
+var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-
 app.set('port', port);
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Create HTTP server.

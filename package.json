@@ -11,16 +11,15 @@
     "debug": "~2.2.0",
     "ejs": "~2.5.2",
     "express": "~4.14.0",
-    "mongoose": "^4.7.6",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
     "formidable": "latest",
-    "mongoose": "latest",
+    "html-entities": "latest",
     "html-escape": "latest",
+    "jsdom": "^10.1.0",
+    "markdown": "latest",
     "mkdirp": "latest",
-    "express-session": "latest",
-    "showdown": "latest"
-
+    "mongoose": "latest",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   },
   "author": "rkst",
   "homepage": "https://github.com/Rekseto/VMotion"
