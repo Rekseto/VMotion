@@ -1,0 +1,178 @@
+body {
+	background-color: #F7F7F7;
+	color: #000000;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.header {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0px 9px 13px -6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+	font-size: 2em;
+	font-weight: 400;
+}
+
+.nav-menu {
+	width: 600px;
+}
+
+.nav-menu ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1.2em;
+}
+
+.nav-menu ul li {
+	position: relative;
+	color: inherit;
+}
+
+.nav-menu ul li a {
+	opacity: 0.6;
+}
+
+.nav-menu ul li::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -7px;
+	width: 0%;
+	border-bottom: 1px solid #842C29;
+	transition: 0.5s;
+	transition-timing-function: cubic-bezier( 0.53, 0.37, 0.46, 1.42);
+}
+
+.nav-menu ul li:hover {
+	color: #842C29;
+}
+
+.nav-menu ul li:hover::before {
+	width: 80%;
+	left: 10%;
+}
+
+.short-info {
+	height: 300px;
+	padding: 9rem;
+}
+
+.short-info h2 {
+	font-size: 2em;
+}
+
+.short-info p {
+	font-size: 1.2em;
+}
+
+.main-wrap {
+	width: 1350px;
+	margin: auto;
+	font-weight: 300;
+}
+
+.articles-header {
+	font-size: 2.2em;
+	font-weight: 400;
+	text-align: center;
+	margin: 2rem;
+	text-transform: uppercase;
+}
+
+.articles-wrap {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.articles-wrap::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	border-top: 1px solid black;
+	width: 85%;
+	margin: auto;
+}
+
+.article {
+	width: 40%;
+	padding: 0rem 1rem;
+	margin: 4rem 1rem;
+	height: auto;
+	position: relative;
+}
+
+.article::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+}
+
+.article::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+
+.article-title {
+	font-size: 2em;
+	display: inline-block;
+	margin: 1rem;
+	font-weight: 400;
+}
+
+.article-title:hover {
+	color: #842C29;
+}
+
+.article-content {
+	font-size: 1em;
+}
+
+.read-more {
+	border: 1px solid #000000;
+	margin: 1rem;
+	font-size: 0.9em;
+	padding: 0.7rem;
+	display: inline-block;
+}
+
+.read-more:hover {
+	color: #842C29;
+	border-radius: 5%;
+	border-color: #842C29;
+}
+
+.tag {
+	opacity: 0.4;
+}
+
+.tag:hover {
+	opacity: 1;
+}
+
+img {
+	display: none;
+}

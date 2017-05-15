@@ -11,7 +11,8 @@ let articleSchema = new Schema({
     tagList: {type: Array, required: true},
     images: [],
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
+    shavedContent: {type: String,required: true}
 });
 articleSchema.methods.pushImage = function (item) {
     this.images.push(item);

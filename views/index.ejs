@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <% include ./templates/head.ejs %>
-</head>
-<body>
-<% include ./templates/navigation.ejs %>
 
-<% include ./templates/scripts.ejs %>
+<head>
+	<% include ./templates/head.ejs %>
+</head>
+
+<body>
+	<div class='main-wrap'>
+		<% include ./templates/navigation.ejs %>
+
+			<% include ./templates/scripts.ejs %>
+	</div>
 </body>
+
 </html>
