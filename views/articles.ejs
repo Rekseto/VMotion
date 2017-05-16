@@ -10,11 +10,9 @@
 		<% include ./templates/navigation.ejs%>
 			<div class='short-info'>
 				<h2> Poznaj naszą przygodę w świecie front-endu i nie tylko! </h2>
-				<p> Artykuły o tematyce HTML5, CSS3, JS i innych redagowane przez dwóch, początkujących programistów </p>
+				<p> Artykuły o tematyce HTML5, CSS3, JS i innych redagowane przez dwóch, początkujących programistów.</p>
 			</div>
 			<section class='articles'>
-				<header>
-					<h2 class='articles-header'>Wpisy</h2></header>
 				<div class='articles-wrap'>
 					<% for(var i = 0; i < articles.length; i++) { %>
 						<article class='article'>
@@ -65,7 +63,8 @@
 					</ul>
 				</nav>
 			</section>
-			<% include ./templates/scripts.ejs %>
+			<% include ./templates/footer.ejs %>
+				<% include ./templates/scripts.ejs %>
 	</div>
 </body>
 
