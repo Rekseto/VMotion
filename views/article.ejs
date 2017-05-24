@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <% include ./templates/head.ejs %>
+  <% include ./templates/head.ejs %>
 </head>
+
 <body>
-<% include ./templates/navigation.ejs%>
-<section>
-    <div>
-        <h2 class="section-heading"><%- articleTitle %></h2>
-        <p> <%- articleContent %> </p>
-    </div>
-</section>
-<% include ./templates/scripts.ejs %>
+  <% include ./templates/navigation.ejs%>
+    <section class='main-article'>
+      <div>
+        <h2 class="main-article__title"><%- articleTitle %></h2>
+        <p class="main-article__content">
+          <%- articleContent %>
+        </p>
+      </div>
+    </section>
+    <% include ./templates/scripts.ejs %>
 </body>
+
 </html>

@@ -9,32 +9,32 @@
 	<div class='main-wrap'>
 		<% include ./templates/navigation.ejs%>
 			<div class='short-info'>
-				<h2> Poznaj naszą przygodę w świecie front-endu i nie tylko! </h2>
-				<p> Artykuły o tematyce HTML5, CSS3, JS i innych redagowane przez dwóch, początkujących programistów.</p>
+				<h2 class='short-info__title'> Poznaj naszą przygodę w świecie front-endu i nie tylko! </h2>
+				<p class='short-info__description'> Artykuły o tematyce HTML5, CSS3, JS i innych redagowane przez dwóch, początkujących programistów.</p>
 			</div>
 			<section class='articles'>
-				<div class='articles-wrap'>
+				<div class='articles_wrap'>
 					<% for(var i = 0; i < articles.length; i++) { %>
 						<article class='article'>
-							<p class='tags-list'> &bull;
+							<p> &bull;
 								<%= articles[i].author %>
 									<% for(var d = 0; d < articles[i].tagList.length; d++) { %>
 										&bull;
-										<a class='tag' href="/tag/<%= articles[i].tagList[d] %>/1">
+										<a class='article__tag' href="/tag/<%= articles[i].tagList[d] %>/1">
 											<%= articles[i].tagList[d] %>
 										</a>
 										<% } %>
 							</p>
 
-							<a class='article-title' href="/article/<%= articles[i]._id %>">
+							<a class='article__title' href="/article/<%= articles[i]._id %>">
 								<%= articles[i].title %>
 							</a>
 
 
-							<p class='article-content'>
+							<p class='article__content'>
 								<%-articles[i].shavedContent %>
 							</p>
-							<a class='read-more' href="/article/<%= articles[i]._id %>">Czytaj więcej</a>
+							<a class='article__read-more' href="/article/<%= articles[i]._id %>">Czytaj więcej</a>
 							<img width="150" height="150" src="../uploads/<%= articles[i]._id %>/<%= articles[i].images[0] %>" alt="<%= articles[i].title %>" class="article-img">
 
 
